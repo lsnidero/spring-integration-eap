@@ -72,24 +72,7 @@
                               http-method="POST"
                               expected-response-type="java.lang.String"/>
 
-   <!-- HTTP Outbound Gateway to fetch data
-   <int-http:outbound-gateway id="httpGateway"
-                              request-channel="httpRequestChannel"
-                              default-url="http://localhost:9080/create"
 
-                              url="https://jsonplaceholder.typicode.com/posts/1"
-                              http-method="GET"
-                              expected-response-type="java.lang.String"
-                              reply-channel="jpaPersistChannel"/>-->
-
-   <!-- Service Activator to persist to DB
-   <int:service-activator input-channel="jpaPersistChannel"
-                          ref="integrationService"
-                          method="saveData"/>
-
-   < !- - Your service bean
-   <bean id="integrationService" class="org.jboss.spring.quickstarts.greeter.greeter_spring.service.IntegrationService"/>
-   -->
    <!-- Look up the database in JNDI -->
    <jee:jndi-lookup jndi-name="java:jboss/datasources/GreeterSpringQuickstartDS" id="dataSource"
       expected-type="javax.sql.DataSource" />
